@@ -16,23 +16,20 @@ private:
 public:
     Passenger();
 
-    void setName(std::string name){
-        this->name = name;
-    }
+    void setName(std::string name);
+
     std::string getName(){
         return name;
     }
 
-    void setID(int id){
-        this->id = id;
-    }
+    void setID(int id);
+
     int getID(){
         return id;
     }
 
-    void setAge(int age){
-        this->id = id;
-    }
+    void setAge(int age);
+
     int getAge(){
         return age;
     }

@@ -16,3 +16,15 @@ std::string Passenger::toString(){
     ss << id << std::endl;
     return ss.str();
 }
+
+void Passenger::setName(std::string name){
+    this->name = name;
+}
+
+void Passenger::setID(int id){
+    this->id = id;
+}
+
+void Passenger::setAge(int age){
+    this->age = age;
+}

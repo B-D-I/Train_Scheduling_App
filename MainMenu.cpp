@@ -19,6 +19,7 @@ void MainMenu::displayMenu(){
     switch(selection) {
         case 1:
             schedulePassenger();
+            displayMenu();
         case 2:
             std::cout << "working";
             break;
@@ -71,5 +72,13 @@ void MainMenu::createPassenger(std::string passengerName, int passengerAge, int 
 void MainMenu::passengerRoute(Passenger passenger) {
     TrainDatabase trainDatabase;
     trainDatabase.createTrainObjectMap();
-    std::cout << "passenger will select train info here" << std::endl;
+
+    std::string departureStation;
+    std::cout << "Enter Departure Station: " << std::endl;
+    std::cin >> departureStation;
+
+    std::string destinationStation;
+    std::cout << "Enter Destination Station: " << std::endl;
+    std::cin >> destinationStation;
+
 }
