@@ -8,13 +8,18 @@ std::unordered_map<std::string, Train> TrainDatabase::createTrainObjectMap(){
 
     std::cout << "working..." << std::endl;
 
-    std::fstream trainFile;
-    trainFile.open("./TxtFiles/Trains.txt", std::ios::in);
-    if(trainFile.is_open()){
-        std::string trainData;
-        while(std::getline(trainFile, trainData)){
-            std::cout << trainData << "\n";
-
-        }
+    std::string trainData;
+    std::fstream trainFile("TxtFiles/Trains.txt");
+    while (std::getline(trainFile, trainData)){
+        std::cout << trainData;
     }
+    trainFile.close();
+
+//    trainFile.open("./TxtFiles/Trains.txt", std::ios::in);
+//    if(trainFile.is_open()){
+//        std::string trainData;
+//        while(std::getline(trainFile, trainData)){
+//            std::cout << trainData << "\n";
+//        }
+//    }
 }
