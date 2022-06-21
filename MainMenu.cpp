@@ -70,4 +70,6 @@ void MainMenu::createPassenger(std::string passengerName, int passengerAge, int 
 
 void MainMenu::passengerRoute(Passenger passenger) {
     TrainDatabase trainDatabase;
+    trainDatabase.createTrainObjectMap();
+    std::cout << "passenger will select train info here" << std::endl;
 }

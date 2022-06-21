@@ -20,6 +20,7 @@ public:
     std::unordered_map<std::string, Train> createTrainObjectMap();
 
     TrainDatabase(){createTrainObjectMap();}
+
 };
 
 #endif //TRAIN_SCHEDULING_APP_DATABASE_H

@@ -4,13 +4,17 @@
 
 #include "Database.h"
 
-std::unordered_map<std::string, Train> createTrainObjectMap(){
+std::unordered_map<std::string, Train> TrainDatabase::createTrainObjectMap(){
+
+    std::cout << "working..." << std::endl;
+
     std::fstream trainFile;
-    trainFile.open("TxtFiles/Trains.txt", std::ios::in);
+    trainFile.open("./TxtFiles/Trains.txt", std::ios::in);
     if(trainFile.is_open()){
         std::string trainData;
         while(std::getline(trainFile, trainData)){
             std::cout << trainData << "\n";
+
         }
     }
 }
