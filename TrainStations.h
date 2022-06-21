@@ -1,0 +1,14 @@
+//
+// Created by nathh on 21/06/2022.
+//
+
+#ifndef TRAIN_SCHEDULING_APP_TRAINSTATIONS_H
+#define TRAIN_SCHEDULING_APP_TRAINSTATIONS_H
+
+
+class TrainStations {
+
+};
+
+
+#endif //TRAIN_SCHEDULING_APP_TRAINSTATIONS_H
