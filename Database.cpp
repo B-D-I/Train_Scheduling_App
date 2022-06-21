@@ -2,13 +2,13 @@
 // Created by nathh on 21/06/2022.
 //
 
+#include <vector>
 #include "Database.h"
 
 std::unordered_map<std::string, Train> TrainDatabase::createTrainObjectMap(){
 
     std::unordered_map<std::string, Train> allTrainsMap;
 
-    std::string trainData;
     std::fstream trainFile;
 
     std::string trainNo;
@@ -24,7 +24,6 @@ std::unordered_map<std::string, Train> TrainDatabase::createTrainObjectMap(){
             std::getline(trainFile, departureDate);
             std::getline(trainFile, destinationStation);
             std::getline(trainFile, seatingList);
-
             trainFile.close();
         }
 
@@ -35,8 +34,11 @@ std::unordered_map<std::string, Train> TrainDatabase::createTrainObjectMap(){
     train.setDestination(destinationStation);
     // need to convert string to hashmap first.
 //    train.setSeatingList();
-    allTrainsMap.insert(std::make_pair(trainNo, train));
 
+    allTrainsMap.insert(std::make_pair(trainNo, train));
+        for(const auto & it : allTrainsMap){
+            std::cout << it.first << " " << std::endl;
+        }
     } return allTrainsMap;
 }
 
@@ -47,6 +49,7 @@ void TrainDatabase::trainStatus() {
     std::string trainNo;
     std::cout << "Enter Train Number: " << std::endl;
     std::cin >> trainNo;
+
 
     for(auto it = trainMap.cbegin();  it != trainMap.cend(); ++it){
         std::cout << it->first << " " << std::endl;

@@ -24,6 +24,7 @@ public:
     TrainDatabase(){createTrainObjectMap();}
 
     void trainStatus();
+
 };
 
 #endif //TRAIN_SCHEDULING_APP_DATABASE_H
