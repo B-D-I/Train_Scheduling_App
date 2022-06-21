@@ -11,7 +11,6 @@
 
 
 class Database {
-
 };
 
 class TrainDatabase: public Database {

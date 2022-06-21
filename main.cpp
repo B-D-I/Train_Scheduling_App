@@ -5,11 +5,11 @@
 
 int main(int arcs, char** argv) {
 
-//    MainMenu mainMenu;
-//    mainMenu.displayMenu();
+    MainMenu mainMenu;
+    mainMenu.displayMenu();
 
-    TrainDatabase trainDatabase;
-    trainDatabase.trainStatus();
+//    TrainDatabase trainDatabase;
+//    trainDatabase.trainStatus();
 
     return 0;
 }

@@ -3,6 +3,7 @@
 //
 
 #include "Train.h"
+// setters for train object
 void Train::setTrainNo(std::string trainNo){
     this->trainNo = trainNo;
 }

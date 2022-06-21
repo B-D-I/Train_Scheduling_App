@@ -5,6 +5,7 @@
 #include <vector>
 #include "Database.h"
 
+// return all .txt train object data into hashmap, with key: train number / value: train object
 std::unordered_map<std::string, Train> TrainDatabase::createTrainObjectMap(){
 
     std::unordered_map<std::string, Train> allTrainsMap;
@@ -26,7 +27,7 @@ std::unordered_map<std::string, Train> TrainDatabase::createTrainObjectMap(){
             std::getline(trainFile, seatingList);
             trainFile.close();
         }
-
+// instantiate train object from .txt data
     Train train;
     train.setTrainNo(trainNo);
     train.setDeparture(departureStation);
@@ -35,6 +36,7 @@ std::unordered_map<std::string, Train> TrainDatabase::createTrainObjectMap(){
     // need to convert string to hashmap first.
 //    train.setSeatingList();
 
+// insert train objects into hashmap, with train number as key
     allTrainsMap.insert(std::make_pair(trainNo, train));
         for(const auto & it : allTrainsMap){
             std::cout << it.first << " " << std::endl;
@@ -43,13 +45,14 @@ std::unordered_map<std::string, Train> TrainDatabase::createTrainObjectMap(){
 }
 
 void TrainDatabase::trainStatus() {
+    // create hashmap containing trains.txt, train objects
     std::unordered_map<std::string, Train> trainMap = createTrainObjectMap();
     std::unordered_map<std::string, Train>::iterator it;
+
 
     std::string trainNo;
     std::cout << "Enter Train Number: " << std::endl;
     std::cin >> trainNo;
-
 
     for(auto it = trainMap.cbegin();  it != trainMap.cend(); ++it){
         std::cout << it->first << " " << std::endl;

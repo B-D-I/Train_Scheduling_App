@@ -4,7 +4,6 @@
 
 #include "MainMenu.h"
 
-
 void MainMenu::displayMenu(){
     std::cout << "Train Schedule Application" << std::endl;
     std::cout << "Select Option" << std::endl;
@@ -21,11 +20,11 @@ void MainMenu::displayMenu(){
             schedulePassenger();
             displayMenu();
         case 2:
-            std::cout << "working";
-            break;
+            std::cout << "Cancel Passenger Not Yet Created";
+            displayMenu();
         case 3:
-            std::cout << "working";
-            break;
+            std::cout << "Check Status Not Yet Created";
+            displayMenu();
         case 4:
             std::cout << "quitting";
             displayMenu();
@@ -62,17 +61,20 @@ void MainMenu::createPassenger(std::string passengerName, int passengerAge, int 
     // instantiate passenger object
     Passenger passenger;
     passenger.setName(passengerName);
-    passenger.setAge(passengerAge); // this needs checking.. incorrect age !!
+    passenger.setAge(passengerAge);
     passenger.setID(passengerID);
 
     std::cout << passenger.toString() << std::endl;
+    // pass passenger object to passenger route method, to select journey
     passengerRoute(passenger);
 }
 
 void MainMenu::passengerRoute(Passenger passenger) {
+    // retrieve all station data
     TrainDatabase trainDatabase;
     trainDatabase.createTrainObjectMap();
 
+    // request passenger route information
     std::string departureStation;
     std::cout << "Enter Departure Station: " << std::endl;
     std::cin >> departureStation;
