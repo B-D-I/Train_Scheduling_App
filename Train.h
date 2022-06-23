@@ -16,6 +16,8 @@ private:
     std::unordered_map<std::string, std::string> seatingList;
 
 public:
+//    Train(std::string trainNo, std::string departure, std::string destination, std::string departureDate);
+
 // setters and getters for train object
     void setTrainNo(std::string trainNo);
     std::string getTrainNo(){

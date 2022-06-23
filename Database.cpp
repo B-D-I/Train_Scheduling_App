@@ -17,38 +17,46 @@ std::unordered_map<std::string, Train> TrainDatabase::createTrainObjectMap(){
     std::string departureDate;
     std::string destinationStation;
     std::string seatingList;
+
     // read train data and place into variables
     trainFile.open("Trains.txt", std::ios::in);
-    if(trainFile.is_open()){
-        while(std::getline(trainFile, trainNo)){
+    if(trainFile.is_open()) {
+        while (std::getline(trainFile, trainNo)) {
             std::getline(trainFile, departureStation);
             std::getline(trainFile, departureDate);
             std::getline(trainFile, destinationStation);
             std::getline(trainFile, seatingList);
             trainFile.close();
         }
-// instantiate train object from .txt data
+    }
+
+    // instantiate train object from .txt data
     Train train;
     train.setTrainNo(trainNo);
     train.setDeparture(departureStation);
     train.setDepartureDate(departureDate);
     train.setDestination(destinationStation);
+
     // need to convert string to hashmap first.
 //    train.setSeatingList();
+    std::cout << train.getTrainNo() << std::endl;
+    std::cout << train.getDeparture() << std::endl;
+    std::cout << train.getDepartureDate() << std::endl;
+    std::cout << train.getDestination() << std::endl;
+
 
 // insert train objects into hashmap, with train number as key
     allTrainsMap.insert(std::make_pair(trainNo, train));
         for(const auto & it : allTrainsMap){
             std::cout << it.first << " " << std::endl;
         }
-    } return allTrainsMap;
+    return allTrainsMap;
 }
 
 void TrainDatabase::trainStatus() {
     // create hashmap containing trains.txt, train objects
     std::unordered_map<std::string, Train> trainMap = createTrainObjectMap();
     std::unordered_map<std::string, Train>::iterator it;
-
 
     std::string trainNo;
     std::cout << "Enter Train Number: " << std::endl;
